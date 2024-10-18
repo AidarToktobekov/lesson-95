@@ -1,46 +1,3 @@
-export interface IArtist{
-    _id: string;
-    name: string;
-    description?: string;
-    image: string | null; 
-    isPublished: boolean;
-}
-
-export interface IAlbum{
-    _id: string;
-    name: string;
-    artist: string;
-    date: Date;
-    image: string | null; 
-    isPublished: boolean;
-}
-
-export interface AlbumMutation{
-    name: string;
-    artist: string;
-    image: string | null;
-}
-
-export interface ITrack{
-    _id: string;
-    name: string;
-    duration: string;
-    trackNumber: number;
-    album: string;
-    isPublished: boolean;
-}
-
-export interface TrackMutation{
-    name: string;
-    duration: string;
-    album: string;
-}
-
-export interface ArtistMutation{
-    name: string;
-    description?: string;
-    image: string | null; 
-}
 export interface IUser{
     _id: string;
     username: string;
@@ -80,13 +37,15 @@ export interface GlobalError{
     error: string;
 }
 
-export interface ITrackHistory {
+export interface ICocktail{
     _id: string;
-    date: string;
+    name: string;
     user: string;
-    track: string;
-}
-
-export interface TrackHistoryMutation {
-    track: string;
+    image: string;
+    recipe: string;
+    isPublished: boolean;
+    ingredients: {
+        name: string;
+        quantity: string;
+    }[];
 }

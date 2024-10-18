@@ -4,6 +4,7 @@ import AppToolbar from './UI/AppToolbar/AppToolbar'
 import { Route, Routes } from 'react-router-dom'
 import Register from './features/User/Register'
 import Login from './features/User/Login'
+import Cocktails from './features/Cocktails/Cocktails'
 
 
 const App = ()=> {
@@ -16,7 +17,7 @@ const App = ()=> {
         <Routes>
           <Route path='/' element={
             <> 
-              <></>
+              <Cocktails/>
             </>
           }/>
           <Route path='/register' element={
