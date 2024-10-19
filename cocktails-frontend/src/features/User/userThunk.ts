@@ -14,13 +14,9 @@ export const register = createAsyncThunk<IUser, RegisterMutation, {rejectValue: 
             keys.forEach((key) => {
                 const value = registerMutation[key];
                 if (value) {
-                    console.log(value);
-                    
                     formData.append(key, value);
                 }
             });
-            console.log(formData);
-            
             const {data: user} = await axiosApi.post<IUser>('/user', formData);
             return user;
         }catch(e){

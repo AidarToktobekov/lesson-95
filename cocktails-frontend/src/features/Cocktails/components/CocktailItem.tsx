@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { ICocktail } from "../../../types";
 import { API_URL } from "../../../constants";
 
-const CocktailItem: React.FC<ICocktail> = ({_id, name, image})=>{
+const CocktailItem: React.FC<ICocktail> = ({_id, name, image, isPublished})=>{
     return(
         <NavLink to={`/cocktails/${_id}`} style={{maxWidth: '400px', minWidth: '300px'}} className="d-flex border border-2 align-items-center rounded-3 p-2 text-dark">
             <div style={{width: '100px', height: '100px'}}>

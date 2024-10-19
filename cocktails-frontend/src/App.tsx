@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 import Register from './features/User/Register'
 import Login from './features/User/Login'
 import Cocktails from './features/Cocktails/Cocktails'
+import AddNewCocktail from './features/Cocktails/AddNewCocktail'
 
 
 const App = ()=> {
@@ -16,9 +17,10 @@ const App = ()=> {
       <div className="container">
         <Routes>
           <Route path='/' element={
-            <> 
               <Cocktails/>
-            </>
+          }/>
+          <Route path='/add' element={
+              <AddNewCocktail/>
           }/>
           <Route path='/register' element={
             <Register/>
