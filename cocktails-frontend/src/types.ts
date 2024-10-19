@@ -49,3 +49,13 @@ export interface ICocktail{
         quantity: string;
     }[];
 }
+
+export interface CocktailMutation{
+    name: string;
+    image: string | null;
+    recipe: string;
+    ingredients: {
+        name: string;
+        quantity: string;
+    }[];
+}

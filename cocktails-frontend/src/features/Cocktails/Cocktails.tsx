@@ -4,7 +4,7 @@ import { selectCocktails, selectCocktailsLoading } from "./coctailsSlice";
 import { fetchCocktails } from "./cocktailsThunk";
 import { CircularProgress } from "@mui/material";
 import { selectUser } from "../User/userSlice";
-import CocktailItem from "./components/cocktailItem";
+import CocktailItem from "./components/CocktailItem";
 
 const Cocktails = ()=>{
     const dispatch = useAppDispatch();

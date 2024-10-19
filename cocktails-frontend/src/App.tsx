@@ -6,6 +6,7 @@ import Register from './features/User/Register'
 import Login from './features/User/Login'
 import Cocktails from './features/Cocktails/Cocktails'
 import AddNewCocktail from './features/Cocktails/AddNewCocktail'
+import OneCocktail from './features/Cocktails/OneCocktail'
 
 
 const App = ()=> {
@@ -18,6 +19,9 @@ const App = ()=> {
         <Routes>
           <Route path='/' element={
               <Cocktails/>
+          }/>
+          <Route path='/cocktails/:id' element={
+              <OneCocktail/>
           }/>
           <Route path='/add' element={
               <AddNewCocktail/>

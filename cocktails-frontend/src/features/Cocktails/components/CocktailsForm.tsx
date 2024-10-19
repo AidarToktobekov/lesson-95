@@ -2,13 +2,15 @@ import { useNavigate } from "react-router-dom";
 import FileInput from "../../../UI/FileInput/FileInput";
 import { useAppDispatch } from "../../../app/hooks";
 import { ChangeEvent, useState } from "react";
+import { createCocktails } from "../cocktailsThunk";
+import { CocktailMutation } from "../../../types";
 
 const CocktailsForm = ()=>{
     
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
-    const [state, setState] = useState({
+    const [state, setState] = useState<CocktailMutation>({
         name: '',
         ingredients: [
             {
@@ -24,7 +26,7 @@ const CocktailsForm = ()=>{
         event.preventDefault();        
         console.log(state);
         
-        // dispatch(createCoctails(state));
+        dispatch(createCocktails(state));
         navigate('/');
     };
     

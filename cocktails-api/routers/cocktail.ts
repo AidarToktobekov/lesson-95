@@ -22,6 +22,15 @@ cocktailsRouter.get('/', async(req, res, next)=>{
     }
 });
 
+cocktailsRouter.get('/:id', async(req, res, next)=>{
+    try{
+        const cocktai = await Cocktail.findById(req.params.id); 
+        return res.send(cocktai);
+    }catch(e){
+        next(e);
+    }
+});
+
 cocktailsRouter.post('/', auth, imagesUpload.single('image'), async(req, res, next)=>{
     try{
         const user = (req as RequestWithUser).user;
@@ -36,7 +45,7 @@ cocktailsRouter.post('/', auth, imagesUpload.single('image'), async(req, res, ne
             recipe: req.body.recipe,
             ingredients: JSON.parse(req.body.ingredients),
         }
-        
+
         const cocktail = new Cocktail(cocktailMutation);
         cocktail.save();
 
