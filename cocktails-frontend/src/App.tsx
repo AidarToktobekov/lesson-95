@@ -7,6 +7,7 @@ import Login from './features/User/Login'
 import Cocktails from './features/Cocktails/Cocktails'
 import AddNewCocktail from './features/Cocktails/AddNewCocktail'
 import OneCocktail from './features/Cocktails/OneCocktail'
+import MyCocktails from './features/Cocktails/MyCocktails'
 
 
 const App = ()=> {
@@ -19,6 +20,9 @@ const App = ()=> {
         <Routes>
           <Route path='/' element={
               <Cocktails/>
+          }/>
+          <Route path='/my-cocktails/:id' element={
+              <MyCocktails/>
           }/>
           <Route path='/cocktails/:id' element={
               <OneCocktail/>

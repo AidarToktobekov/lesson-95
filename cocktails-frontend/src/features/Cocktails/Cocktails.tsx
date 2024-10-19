@@ -29,12 +29,6 @@ const Cocktails = ()=>{
                 return(
                     <CocktailItem key={cocktail._id} user={cocktail.user} recipe={cocktail.recipe} ingredients={cocktail.ingredients} isPublished={cocktail.isPublished} image={cocktail.image} name={cocktail.name} _id={cocktail._id}/>
                 )
-            }else{
-                return(
-                    <h5 key={cocktail._id} className="text-center my-5">
-                        The cocktail list is empty.
-                    </h5>
-                )
             }
         })
     }

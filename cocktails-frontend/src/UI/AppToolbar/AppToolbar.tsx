@@ -35,7 +35,8 @@ const AppToolbar = ()=>{
     if (user) {
         links = (
             <>
-                <NavLink className="navbar-brand text-light ms-auto" to='/add'>Add</NavLink>
+                <NavLink className="navbar-brand text-light ms-auto" to={`/my-cocktails/${user._id}`}>My Cocktails</NavLink>
+                <NavLink className="navbar-brand text-light" to='/add'>Add</NavLink>
                 <button className="navbar-brand text-light btn d-flex align-items-center gap-2" onClick={handleClick}>
                     {user.displayName}
                     <span className="d-block rounded-3 d-flex align-items-center justify-content-center bg-light" style={{width: '40px', height: '40px'}}>

@@ -3,7 +3,11 @@ import { CocktailMutation, ICocktail } from "../../types";
 import axiosApi from "../../axiosApi";
 import { RootState } from "../../app/store";
 
-export const fetchCocktails = createAsyncThunk<ICocktail[]>('coctails/fetchAll', async()=>{
+export const fetchCocktails = createAsyncThunk<ICocktail[], string | undefined>('coctails/fetchAll', async(id)=>{
+    if(id){
+        const {data: cocktails} = await axiosApi.get<ICocktail[]>(`/cocktails?user_id=${id}`);
+        return cocktails; 
+    }
     const {data: cocktails} = await axiosApi.get<ICocktail[]>('/cocktails');
     return cocktails; 
 });

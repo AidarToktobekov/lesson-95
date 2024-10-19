@@ -38,20 +38,28 @@ const OneCocktail = ()=>{
             <h3 className="text-center my-4">
                 {cocktail?.name}
             </h3>
-            <div className="mb-3" style={{width: '100px'}}>
-                <img src={`${API_URL}/images/${cocktail?.image}`} alt="#"className="w-100"/>
-            </div>
-            <div className="mb-3">
-                {cocktail?.ingredients.map((ingredient)=>{
-                    return(
-                        <div>
-                            {ingredient.name} - {ingredient.quantity}
-                        </div>
-                    )
-                })}
-            </div>
-            <div className="mb-3">
-                {cocktail?.recipe}
+            <div className="d-flex gap-4">
+                <div className="mb-3" style={{width: '100px'}}>
+                    <img src={`${API_URL}/images/${cocktail?.image}`} alt="#"className="w-100"/>
+                </div>
+                <div className="mb-3">
+                    <h6>
+                        Ingredients:
+                    </h6>
+                    {cocktail?.ingredients.map((ingredient)=>{
+                        return(
+                            <div>
+                                {ingredient.name} - {ingredient.quantity}
+                            </div>
+                        )
+                    })}
+                </div>
+                <div className="mb-3">
+                    <h6>
+                        Recipe:
+                    </h6>
+                    {cocktail?.recipe}
+                </div>
             </div>
 
          {user?.role === 'admin'? (
@@ -68,7 +76,15 @@ const OneCocktail = ()=>{
                     )}
                 </>
             ):(
-                null
+                <>
+                    {cocktail?.isPublished? (
+                        null
+                    ):(
+                        <div className="p-1 rounded-1 bg-danger text-light">
+                            Your cocktail is being reviewed by a moderator
+                        </div>
+                    )}
+                </>
             )}
         </>
     )
